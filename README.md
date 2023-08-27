@@ -1,4 +1,4 @@
-# SDXLWorkflow
+# SDXLWorkflows
 Basic SDXL workflows for ComfyUI
 
 
