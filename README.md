@@ -19,5 +19,5 @@ SDXL_RefinerUpscalerLora.json - The same as above, but with a Lora node.
 
 
 ## SDXL CLIP image combiner
-SDXL_CLIPVisionCombiner.json - Loads two images, looks at them, then combines the results. Your milage may vary. Needs the refiner node added.
+SDXL_CLIPVisionCombiner.json - Loads two images, looks at them, then combines the results. Your milage may vary. I Need to add refiner node. Ther results can be pretty bad.
 ![WorkflowPreviewCLIPCombiner](https://github.com/zzubnik/SDXLWorkflow/assets/24965799/0b4a4fe0-88b7-4017-9b7e-57276d19f5d1)
