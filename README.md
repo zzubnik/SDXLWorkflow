@@ -2,7 +2,7 @@
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up.
 
 ## My current general setup Includes LOrA and upscaling.
-SDXL_WorkflowCombinedTidy.json 
+SDXL_WorkflowCombinedTidy.json - Requires RGThree nodes, but only for the seed node. Setup layout assumes Preview method: Auto is set.
 ![WorkflowCombinedOrganised](https://github.com/zzubnik/SDXLWorkflow/assets/24965799/86b1161a-3e58-4474-94ec-05ba8073c376)
 
 
