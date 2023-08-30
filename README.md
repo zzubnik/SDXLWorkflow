@@ -1,7 +1,8 @@
 # SDXLWorkflows
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up.
 
-## SDXL_WorkflowCombinedTidy.json My current general setup Includes LOrA and upscaling.
+## My current general setup Includes LOrA and upscaling.
+SDXL_WorkflowCombinedTidy.json 
 ![WorkflowCombinedOrganised](https://github.com/zzubnik/SDXLWorkflow/assets/24965799/86b1161a-3e58-4474-94ec-05ba8073c376)
 
 
