@@ -1,0 +1,1520 @@
+{
+  "last_node_id": 46,
+  "last_link_id": 87,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        30.523451981514725,
+        77.434073444859
+      ],
+      "size": [
+        370,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "title": "Base",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "realisticStockPhoto_v10.safetensors"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 2,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        30.523451981514725,
+        207.43407344485877
+      ],
+      "size": [
+        370,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            48
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            19,
+            24
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            54
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "title": "Refiner",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_refiner_1.0.safetensors"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 24,
+      "type": "LoraLoader",
+      "pos": [
+        31,
+        390
+      ],
+      "size": [
+        368.8755002880479,
+        130.7418464457428
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 32
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            84
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "cyborg_style_xl-alpha.safetensors",
+        0,
+        0
+      ],
+      "shape": 1
+    },
+    {
+      "id": 46,
+      "type": "LoraLoader",
+      "pos": [
+        30,
+        551
+      ],
+      "size": [
+        369.8950840096621,
+        131.0119540096848
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 84
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            85
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            86,
+            87
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Samaritan 3d Cartoon SDXL.safetensors",
+        0.48,
+        0.48
+      ],
+      "shape": 1
+    },
+    {
+      "id": 25,
+      "type": "KSampler",
+      "pos": [
+        440,
+        80
+      ],
+      "size": [
+        460,
+        600
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "link": 85,
+          "name": "model",
+          "type": "MODEL"
+        },
+        {
+          "link": 38,
+          "name": "positive",
+          "type": "CONDITIONING"
+        },
+        {
+          "link": 39,
+          "name": "negative",
+          "type": "CONDITIONING"
+        },
+        {
+          "link": 81,
+          "name": "latent_image",
+          "type": "LATENT",
+          "slot_index": 3
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 78,
+          "widget": {
+            "name": "seed",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": 0,
+                "max": 18446744073709552000
+              }
+            ]
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 36,
+          "widget": {
+            "name": "steps",
+            "config": [
+              "INT",
+              {
+                "default": 20,
+                "min": 1,
+                "max": 10000
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            46
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        16440907371213,
+        "fixed",
+        30,
+        4,
+        "euler",
+        "normal",
+        1
+      ],
+      "shape": 1
+    },
+    {
+      "id": 23,
+      "type": "PrimitiveNode",
+      "pos": [
+        1620.3231443294815,
+        78.52065314931322
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            36,
+            49
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "steps",
+            "config": [
+              "INT",
+              {
+                "default": 20,
+                "min": 1,
+                "max": 10000
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Steps",
+      "properties": {},
+      "widgets_values": [
+        30,
+        "fixed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 20,
+      "type": "PrimitiveNode",
+      "pos": [
+        1620.3231443294815,
+        188.5206531493132
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            50
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "start_at_step",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": 0,
+                "max": 10000
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Refine @",
+      "properties": {},
+      "widgets_values": [
+        28,
+        "fixed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [
+        40.03788275789627,
+        763.1072468402955
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 86
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 17,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Large breasts, curvy,\na happy red-haired 25 yo woman.\nwearing a space suit\nin a space station.\nfloating.\naward-winning, professional, highly detailed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        40.03788275789627,
+        793.1072468402955
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 87
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 18,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blur, blurry"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncode",
+      "pos": [
+        40.03788275789627,
+        823.1072468402955
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 24
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 21,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            52
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blur, blurry"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 18,
+      "type": "CLIPTextEncode",
+      "pos": [
+        40.03788275789627,
+        853.1072468402955
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 19
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 20,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            51
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Large breasts, curvy,\na happy red-haired 25 yo woman.\nwearing a space suit\nin a space station.\nfloating.\naward-winning, professional, highly detailed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 36,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1199.42420481626,
+        759.5291039812275
+      ],
+      "size": [
+        470,
+        70
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            63
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "BSRGANx2.pth"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 44,
+      "type": "SDXL Resolutions (JPS)",
+      "pos": [
+        1199,
+        860
+      ],
+      "size": [
+        470,
+        80
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            80
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "title": "Output Resolution",
+      "properties": {
+        "Node name for S&R": "SDXL Resolutions (JPS)"
+      },
+      "widgets_values": [
+        "landscape - 1152x896 (4:3)"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 17,
+      "type": "PrimitiveNode",
+      "pos": [
+        440,
+        761
+      ],
+      "size": [
+        410,
+        180
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            17,
+            20
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Prompt +",
+      "properties": {},
+      "widgets_values": [
+        "Large breasts, curvy,\na happy red-haired 25 yo woman.\nwearing a space suit\nin a space station.\nfloating.\naward-winning, professional, highly detailed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 16,
+      "type": "PrimitiveNode",
+      "pos": [
+        850,
+        761
+      ],
+      "size": [
+        340,
+        180
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            18,
+            21
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Prompt -",
+      "properties": {},
+      "widgets_values": [
+        "blur, blurry"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 43,
+      "type": "Seed (rgthree)",
+      "pos": [
+        1620.3231443294815,
+        298.52065314931326
+      ],
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SEED",
+          "type": "INT",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Seed (rgthree)"
+      },
+      "widgets_values": [
+        887257559510940,
+        null,
+        null,
+        null
+      ],
+      "shape": 1
+    },
+    {
+      "id": 35,
+      "type": "PreviewImage",
+      "pos": [
+        901,
+        80
+      ],
+      "size": [
+        710,
+        600
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 60,
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscaled",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "shape": 1
+    },
+    {
+      "id": 45,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1627,
+        510
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 79,
+          "widget": {
+            "name": "width",
+            "config": [
+              "INT",
+              {
+                "default": 512,
+                "min": 64,
+                "max": 8192,
+                "step": 8
+              }
+            ]
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 80,
+          "widget": {
+            "name": "height",
+            "config": [
+              "INT",
+              {
+                "default": 512,
+                "min": 64,
+                "max": 8192,
+                "step": 8
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            81
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "shape": 1
+    },
+    {
+      "id": 29,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        1627,
+        539
+      ],
+      "size": {
+        "0": 315,
+        "1": 546
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 48
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 52
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 51
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 46
+        },
+        {
+          "name": "start_at_step",
+          "type": "INT",
+          "link": 50,
+          "widget": {
+            "name": "start_at_step",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": 0,
+                "max": 10000
+              }
+            ]
+          },
+          "slot_index": 4
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 49,
+          "widget": {
+            "name": "steps",
+            "config": [
+              "INT",
+              {
+                "default": 20,
+                "min": 1,
+                "max": 10000
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "disable",
+        0,
+        "fixed",
+        30,
+        4,
+        "euler",
+        "normal",
+        28,
+        10000,
+        "disable"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 30,
+      "type": "VAEDecode",
+      "pos": [
+        1627,
+        569
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 56
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 54
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            57,
+            58
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "shape": 1
+    },
+    {
+      "id": 32,
+      "type": "SaveImage",
+      "pos": [
+        1627,
+        599
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 57
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 34,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        1627,
+        629
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true,
+        "pinned": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 63
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Upscale Image",
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      17,
+      17,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      18,
+      16,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      19,
+      2,
+      1,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      20,
+      17,
+      0,
+      18,
+      1,
+      "STRING"
+    ],
+    [
+      21,
+      16,
+      0,
+      19,
+      1,
+      "STRING"
+    ],
+    [
+      24,
+      2,
+      1,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      31,
+      1,
+      1,
+      24,
+      1,
+      "CLIP"
+    ],
+    [
+      32,
+      1,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      23,
+      0,
+      25,
+      5,
+      "INT"
+    ],
+    [
+      38,
+      5,
+      0,
+      25,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      39,
+      6,
+      0,
+      25,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      46,
+      25,
+      0,
+      29,
+      3,
+      "LATENT"
+    ],
+    [
+      48,
+      2,
+      0,
+      29,
+      0,
+      "MODEL"
+    ],
+    [
+      49,
+      23,
+      0,
+      29,
+      5,
+      "INT"
+    ],
+    [
+      50,
+      20,
+      0,
+      29,
+      4,
+      "INT"
+    ],
+    [
+      51,
+      18,
+      0,
+      29,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      52,
+      19,
+      0,
+      29,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      54,
+      2,
+      2,
+      30,
+      1,
+      "VAE"
+    ],
+    [
+      56,
+      29,
+      0,
+      30,
+      0,
+      "LATENT"
+    ],
+    [
+      57,
+      30,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      58,
+      30,
+      0,
+      34,
+      1,
+      "IMAGE"
+    ],
+    [
+      60,
+      34,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      63,
+      36,
+      0,
+      34,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      78,
+      43,
+      0,
+      25,
+      4,
+      "INT"
+    ],
+    [
+      79,
+      44,
+      0,
+      45,
+      0,
+      "INT"
+    ],
+    [
+      80,
+      44,
+      1,
+      45,
+      1,
+      "INT"
+    ],
+    [
+      81,
+      45,
+      0,
+      25,
+      3,
+      "LATENT"
+    ],
+    [
+      82,
+      24,
+      1,
+      46,
+      1,
+      "CLIP"
+    ],
+    [
+      84,
+      24,
+      0,
+      46,
+      0,
+      "MODEL"
+    ],
+    [
+      85,
+      46,
+      0,
+      25,
+      0,
+      "MODEL"
+    ],
+    [
+      86,
+      46,
+      1,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      87,
+      46,
+      1,
+      6,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Load LoRA",
+      "bounding": [
+        31,
+        331,
+        369,
+        359
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Checkpoints",
+      "bounding": [
+        30,
+        17,
+        371,
+        299
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Images",
+      "bounding": [
+        440,
+        18,
+        1170,
+        673
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Prompts",
+      "bounding": [
+        440,
+        700,
+        750,
+        250
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Controls",
+      "bounding": [
+        1620,
+        19,
+        210,
+        420
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Steps",
+      "bounding": [
+        1627,
+        448,
+        203,
+        187
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Connections",
+      "bounding": [
+        41,
+        704,
+        207,
+        159
+      ],
+      "color": "#444"
+    },
+    {
+      "title": "Output Options",
+      "bounding": [
+        1199,
+        700,
+        470,
+        250
+      ],
+      "color": "#444"
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
