@@ -1,7 +1,7 @@
 # SDXLWorkflows
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up.
 
-## My current general setup Includes LOrA and upscaling.
+## My current general setup Includes 2x loRA and upscaling.
 workflow_SDXL_2LORA_Upscale.json - Requires RGThree nodes, and JPS Nodes. Setup layout assumes Preview method: Auto is set and link render mode is set to hidden.
 ![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/workflow_SDXL_2LORA_Upscale.JPG)
 
