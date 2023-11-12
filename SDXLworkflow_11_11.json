@@ -1,6 +1,6 @@
 {
   "last_node_id": 123,
-  "last_link_id": 185,
+  "last_link_id": 186,
   "nodes": [
     {
       "id": 51,
@@ -34,7 +34,7 @@
         "Node name for S&R": "Seed (rgthree)"
       },
       "widgets_values": [
-        1109077370251289,
+        601560285450878,
         null,
         null,
         null
@@ -141,7 +141,7 @@
         "Node name for S&R": "SDXL Resolutions (JPS)"
       },
       "widgets_values": [
-        "landscape - 1344x768 (16:9)"
+        "square - 1024x1024 (1:1)"
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159",
@@ -285,7 +285,7 @@
       "title": "Style 1",
       "properties": {},
       "widgets_values": [
-        "base",
+        "futuristic-cybernetic",
         "fixed"
       ],
       "color": "#432",
@@ -324,7 +324,7 @@
       "title": "Style 2",
       "properties": {},
       "widgets_values": [
-        "base",
+        "futuristic-retro futurism",
         "fixed"
       ],
       "color": "#432",
@@ -687,7 +687,7 @@
         "Node name for S&R": "Text box"
       },
       "widgets_values": [
-        "A whimsical and playful painting of a black kitten having an adventure in a time machine. The kitten is traveling through different time periods, interacting with badgers, dogs, and monkeys. The time machine is in the background, with its lights flashing."
+        "retro-futuristic sexy female policewoman (smiling:1.2) sexy, (large breasts:1.4), red hair.\nArresting a bad guy.\nvintage sci-fi, 50s and 60s style, atomic age, vibrant, highly detailed"
       ],
       "color": "#232",
       "bgcolor": "#353",
@@ -725,7 +725,7 @@
         "Node name for S&R": "Text box"
       },
       "widgets_values": [
-        ""
+        "contemporary, realistic, rustic, primitive. asian, (ugly eyes, deformed iris, deformed pupils, fused lips and teeth:1.2), (un-detailed skin, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime:1.2), text, close up, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, nude, naked"
       ],
       "color": "#232",
       "bgcolor": "#353",
@@ -1449,82 +1449,6 @@
       "shape": 1
     },
     {
-      "id": 87,
-      "type": "SDXLPromptStyler",
-      "pos": [
-        1624,
-        -1101
-      ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 24,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_positive",
-          "type": "STRING",
-          "link": 106,
-          "widget": {
-            "name": "text_positive"
-          }
-        },
-        {
-          "name": "style",
-          "type": "COMBO",
-          "link": 107,
-          "widget": {
-            "name": "style"
-          },
-          "slot_index": 1
-        },
-        {
-          "name": "text_negative",
-          "type": "STRING",
-          "link": 125,
-          "widget": {
-            "name": "text_negative"
-          },
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_positive",
-          "type": "STRING",
-          "links": [
-            109,
-            115
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "text_negative",
-          "type": "STRING",
-          "links": [],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SDXLPromptStyler"
-      },
-      "widgets_values": [
-        "",
-        "",
-        "base",
-        "No"
-      ],
-      "color": "#323",
-      "bgcolor": "#535",
-      "shape": 1
-    },
-    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
@@ -1921,7 +1845,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 27,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -2470,17 +2394,17 @@
       "id": 90,
       "type": "SDXLPromptStyler",
       "pos": [
-        1623,
-        -1060
+        1043,
+        -1223
       ],
-      "size": {
-        "0": 400,
-        "1": 200
-      },
+      "size": [
+        400,
+        200
+      ],
       "flags": {
-        "collapsed": false
+        "collapsed": true
       },
-      "order": 26,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -2499,6 +2423,14 @@
             "name": "style"
           },
           "slot_index": 1
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "link": 186,
+          "widget": {
+            "name": "text_negative"
+          }
         }
       ],
       "outputs": [
@@ -2530,7 +2462,85 @@
       "widgets_values": [
         "",
         "",
-        "base",
+        "futuristic-retro futurism",
+        "No"
+      ],
+      "color": "#323",
+      "bgcolor": "#535",
+      "shape": 1
+    },
+    {
+      "id": 87,
+      "type": "SDXLPromptStyler",
+      "pos": [
+        1043,
+        -1276
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "link": 106,
+          "widget": {
+            "name": "text_positive"
+          }
+        },
+        {
+          "name": "style",
+          "type": "COMBO",
+          "link": 107,
+          "widget": {
+            "name": "style"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "link": 125,
+          "widget": {
+            "name": "text_negative"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            109,
+            115
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            186
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStyler"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "futuristic-cybernetic",
         "No"
       ],
       "color": "#323",
@@ -3146,6 +3156,14 @@
       92,
       0,
       "*"
+    ],
+    [
+      186,
+      87,
+      1,
+      90,
+      2,
+      "STRING"
     ]
   ],
   "groups": [],
