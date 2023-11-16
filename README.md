@@ -2,8 +2,14 @@
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up.
 
 ## Current general setup.
-[workflow_SDXL_2LORA_Upscale.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXLworkflow_11_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
+[workflow_SDXL_2LORA_Upscale.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
 ![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/general_sdxl_11_11.JPG)
+
+## Current IMG2IMG version of general setup.
+[workflow_SDXL_2LORA_Upscale.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXLworkflow_11_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.JPG)
+
+
 
 ## An older general setup Includes 2x loRA and upscaling.
 workflow_SDXL_2LORA_Upscale.json - Requires RGThree nodes, and JPS Nodes. Setup layout assumes Preview method: Auto is set and link render mode is set to hidden.
