@@ -1,5 +1,5 @@
 # SDXLWorkflows
-Basic SDXL workflows for ComfyUI. I prefer things to be lined up.
+Basic SDXL workflows for ComfyUI. I prefer things to be lined up. This repository is really just to help me keep track of things.
 
 ## Current general setup.
 [SDXL_V2_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_V2_0.json) -  Refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), Style selectors, Latent upscale (weird), and basic image adjustment controls. Bypass things you don't need. I usually have the face and hand fixer bypassed as well as the latent upscale group, which really is pretty useless. I think I'll remove it for the next version.
