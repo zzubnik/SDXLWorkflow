@@ -1,7 +1,12 @@
 # SDXLWorkflows
-Basic SDXL workflows for ComfyUI. I prefer things to be lined up. This repository is really just to help me keep track of things.
+Basic SDXL workflows for ComfyUI. I prefer things to be lined up. Images in the middle with the controls around that for quick navigation. This repository is really just to help me keep track of things.
 
 ## Current general setup.
+[SDXL_V3_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, and basic image adjustment controls. Bypass things you don't need with the switches.
+
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.JPG)
+
+## Everything below here is older.
 [SDXL_V2_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_V2_0.json) -  Refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), Style selectors, Latent upscale (weird), and basic image adjustment controls. Bypass things you don't need. I usually have the face and hand fixer bypassed as well as the latent upscale group, which really is pretty useless. I think I'll remove it for the next version. There is a row of collapsed nodes. Just right-click and choose Bypass to turn them off.
 
 ![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_V2_0.JPG)
@@ -10,7 +15,7 @@ Basic SDXL workflows for ComfyUI. I prefer things to be lined up. This repositor
 [SDXLworkflow_11_11.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXLworkflow_11_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
 ![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/general_sdxl_11_11.JPG)
 
-## Current IMG2IMG version of general setup.
+## IMG2IMG version of general setup.
 [SDXL_img2Imgworkflow_15_11.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
 ![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.JPG)
 
