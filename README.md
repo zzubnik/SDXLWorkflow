@@ -7,29 +7,29 @@ Basic SDXL workflows for ComfyUI. I prefer things to be lined up. Images in the 
 This new version can replicate IMG2IMG or image feedback. Enable Input Image When you generate an image you like, right-click on it in the Refined Image window and choose Copy (Clipspace). Right-click on the Load Image window and choose Paste (Clipspace). Adjust the Denoise to a value that works. Start with .75 and see how much the image changes. Change the text to change the output. Feed that back in, etc. 
 Make sure to set Denoise to 1.0 when not using image input or you will get noise.
 
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_1.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_3_1.JPG)
 
 ## Everything below here is older.
 [SDXL_V3_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, and basic image adjustment controls. Bypass things you don't need with the switches.
 
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_3_0.JPG)
 
 [SDXL_V2_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_V2_0.json) -  Refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), Style selectors, Latent upscale (weird), and basic image adjustment controls. Bypass things you don't need. I usually have the face and hand fixer bypassed as well as the latent upscale group, which really is pretty useless. I think I'll remove it for the next version. There is a row of collapsed nodes. Just right-click and choose Bypass to turn them off.
 
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_V2_0.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_V2_0.JPG)
 
 ## Older general setup.
 [SDXLworkflow_11_11.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXLworkflow_11_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/general_sdxl_11_11.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/general_sdxl_11_11.JPG)
 
 ## IMG2IMG version of general setup.
 [SDXL_img2Imgworkflow_15_11.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.json) -  Includes refiner, face fixer, one LoRA,  FreeUV2 (which I don't like and bypass), and basic image adjustment controls
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_img2Imgworkflow_15_11.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_img2Imgworkflow_15_11.JPG)
 
 
 ## An older general setup Includes 2x loRA and upscaling.
 workflow_SDXL_2LORA_Upscale.json - Requires RGThree nodes, and JPS Nodes. Setup layout assumes Preview method: Auto is set and link render mode is set to hidden.
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/workflow_SDXL_2LORA_Upscale.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/workflow_SDXL_2LORA_Upscale.JPG)
 
 ## general setup Includes LOrA and upscaling.
 SDXL_WorkflowCombinedTidy.json - Requires RGThree nodes, but only for the seed node. Setup layout assumes Preview method: Auto is set.
