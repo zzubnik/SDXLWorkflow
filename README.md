@@ -11,7 +11,7 @@ Glow replaced with faster and better Bloom filter. Comparison preview image adde
 
 Time to reorganize. The layout has sprawled.
 
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_3_2.JPG)
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_V_3_2.JPG)
 
 ## Everything below here is older.
 [SDXL_V3_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, and basic image adjustment controls. Bypass things you don't need with the switches.
