@@ -2,12 +2,16 @@
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up. Images in the middle with the controls around that for quick navigation. This repository is really just to help me keep track of things while I learn and add new developments from the community.
 
 ## Current general setup.
-[SDXL_V3_1.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_1.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, better basic image adjustment controls. Bypass things you don't need with the switches. Added film grain and chromatic abberation, which really makes some images much more believable.
+[SDXL_V3_2.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_2.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, better basic image adjustment controls. Bypass things you don't need with the switches. Added film grain and chromatic abberation, which really makes some images much more believable.
 
 This new version can replicate IMG2IMG or image feedback. Enable Input Image When you generate an image you like, right-click on it in the Refined Image window and choose Copy (Clipspace). Right-click on the Load Image window and choose Paste (Clipspace). Adjust the Denoise to a value that works. Start with .75 and see how much the image changes. Change the text to change the output. Feed that back in, etc. 
 Make sure to set Denoise to 1.0 when not using image input or you will get noise.
 
-![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_3_1.JPG)
+Glow replaced with faster and better Bloom filter. Comparison preview image added to the Load Image box.
+
+Time to reorganize. The layout has sprawled.
+
+![![WorkflowPreview]](https://github.com/zzubnik/SDXLWorkflow/blob/main/images/SDXL_3_2.JPG)
 
 ## Everything below here is older.
 [SDXL_V3_0.json](https://github.com/zzubnik/SDXLWorkflow/blob/main/SDXL_3_0.json) -  Redesigned to use switching on and off of parts of the process. Refiner, face fixer, one LoRA,  FreeUV2, Style selectors, and basic image adjustment controls. Bypass things you don't need with the switches.
