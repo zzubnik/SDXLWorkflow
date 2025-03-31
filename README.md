@@ -1,3 +1,5 @@
+This is so out of date. I would be highly surprised if it works at all. 
+
 # SDXLWorkflows
 Basic SDXL workflows for ComfyUI. I prefer things to be lined up. Images in the middle with the controls around that for quick navigation. This repository is really just to help me keep track of things while I learn and add new developments from the community.
 
